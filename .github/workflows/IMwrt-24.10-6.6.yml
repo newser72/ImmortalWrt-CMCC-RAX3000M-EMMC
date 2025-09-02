@@ -51,7 +51,7 @@ on:
         description: '集成keepalived'
         type: boolean
         required: true
-        default: true
+        default: false
       ssh:
         description: 'SSH connection to Actions'
         type: boolean
