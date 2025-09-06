@@ -1,4 +1,4 @@
-name: IMwrt-24.10-6.6_simple
+name: IMwrt-24.10-6.6_passwall_new
 
 on:
   repository_dispatch:
