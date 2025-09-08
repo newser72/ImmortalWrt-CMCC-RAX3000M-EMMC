@@ -422,9 +422,9 @@ jobs:
             echo "EEPROM 文件无需修改: $EEPROM_FILE"
           fi
 
-      - name: SSH链接管理
-        uses: P3TERX/ssh2actions@v1.0.0
-        if: (github.event.inputs.ssh == 'true')
+      #- name: SSH链接管理
+      #  uses: P3TERX/ssh2actions@v1.0.0
+      #  if: (github.event.inputs.ssh == 'true')
 
       - name: 上传 .config
         uses: actions/upload-artifact@v4
