@@ -48,11 +48,11 @@ on:
           - '24.10-6.6.config'
           - '24.10-6.6_simple_seed.config'
           - '24.10-6.6_passwall_seed.config'
-      enable_keepalived:
-        description: '集成keepalived'
-        type: boolean
-        required: true
-        default: false
+      #enable_keepalived:
+      #  description: '集成keepalived'
+      #  type: boolean
+      #  required: true
+      #  default: false
       ssh:
         description: 'SSH connection to Actions'
         type: boolean
@@ -74,8 +74,8 @@ on:
       #   required: true
       #   default: true
 
-  schedule:
-    - cron: '0 6 * * 1'
+  #schedule:
+  #  - cron: '0 6 * * 1'
 
 permissions:
   contents: write
