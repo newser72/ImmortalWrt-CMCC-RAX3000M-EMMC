@@ -57,7 +57,7 @@ on:
         description: 'SSH connection to Actions'
         type: boolean
         required: true
-        default: true
+        default: false
       # istore:
       #   description: '集成iStore商店'
       #   type: boolean
