@@ -98,7 +98,8 @@ env:
   ENABLE_KEEPALIVED: ${{ github.event.inputs.enable_keepalived || 'true' }}
   ENABLE_OPENCLASH: ${{ github.event.inputs.enable_openclash || 'true' }}
   ENABLE_WECHATPUSH: ${{ github.event.inputs.enable_wechatpush || 'true' }}
-
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+  
 jobs:
   check-source-updates:
     runs-on: ubuntu-22.04
