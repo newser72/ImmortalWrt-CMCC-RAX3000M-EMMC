@@ -108,14 +108,14 @@ jobs:
       latest_commit_message: ${{ steps.check.outputs.LATEST_COMMIT_MESSAGE }}
     steps:
       - name: 检出本仓库代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 设置 REPO_PATH
         run: echo "REPO_PATH=$(echo $REPO_URL | sed -E 's#https://github.com/##;s#/$##')" >> $GITHUB_ENV
 
       - name: 获取 last_checked_sha 缓存
         id: cache-sha
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: last_checked_sha.txt
           key: ${{ env.REPO_PATH }}-${{ env.REPO_BRANCH }}-last-checked-sha
@@ -188,7 +188,7 @@ jobs:
           echo "上传 packages 目录: ${{ github.event.inputs.upload_packages_dir }}"
 
       - name: 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # 获取完整的提交历史
 
@@ -199,13 +199,13 @@ jobs:
         run: echo "REPO_PATH=$(echo $REPO_URL | sed -E 's#https://github.com/##;s#/$##')" >> $GITHUB_ENV
 
       - name: 获取上次提交sha缓存
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: last_build_sha.txt
           key: ${{ env.REPO_PATH }}-${{ env.REPO_BRANCH }}-last-build-sha
 
       - name: 获取 last_checked_sha 缓存
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: last_checked_sha.txt
           key: ${{ env.REPO_PATH }}-${{ env.REPO_BRANCH }}-last-checked-sha
@@ -428,7 +428,7 @@ jobs:
       #  if: (github.event.inputs.ssh == 'true')
 
       - name: 上传 .config
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: (github.event.inputs.ssh == 'true')
         with:
           name: OpenWrt_config
@@ -467,7 +467,7 @@ jobs:
 
       - name: 上传编译日志
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: compile-log-${{ matrix.device_model }}
           path: |
@@ -520,14 +520,14 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: 上传 bin
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: steps.compile.outputs.status == 'success' && github.event_name == 'workflow_dispatch' && github.event.inputs.upload_bin_dir == 'true'
         with:
           name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin
 
       - name: 上传 packages
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: steps.compile.outputs.status == 'success' && github.event_name == 'workflow_dispatch' && github.event.inputs.upload_packages_dir == 'true'
         with:
           name: OpenWrt_packages${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
@@ -669,13 +669,13 @@ jobs:
           gh cache list
 
       - name: 保存此次提交sha缓存
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: last_build_sha.txt
           key: ${{ env.REPO_PATH }}-${{ env.REPO_BRANCH }}-last-build-sha
 
       - name: 保存 last_checked_sha 缓存
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: last_checked_sha.txt
           key: ${{ env.REPO_PATH }}-${{ env.REPO_BRANCH }}-last-checked-sha
