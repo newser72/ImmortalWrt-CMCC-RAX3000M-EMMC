@@ -399,7 +399,7 @@ jobs:
 
       - name: 下载软件包
         id: package
-        timeout-minutes: 60
+        timeout-minutes: 90
         run: |
           cd openwrt
           make download -j$(nproc) || { echo "❌ 下载软件包失败"; exit 1; }
