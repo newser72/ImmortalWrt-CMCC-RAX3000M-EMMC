@@ -74,8 +74,8 @@ on:
       #   required: true
       #   default: true
 
-  schedule:
-    - cron: '0 6 1,17 * *'
+  #schedule:
+  #  - cron: '0 6 1,17 * *'
 
 permissions:
   contents: write
