@@ -513,7 +513,7 @@ jobs:
             if [ -f "$file" ] && ! echo "$file" | grep -q -- "-bl2"; then
               TYPE=$(echo "$file" | grep -o "sysupgrade\|factory")
               EXT="${file##*.}"
-              NEW_NAME="ImmortalWrt-24.10-6.6-${DEVICE_MODEL}_25dB-${DB25}_${FIRMWARE_VERSION}${FILE_DATE}_${TYPE}.${EXT}"
+              NEW_NAME="ImmortalWrt-25.12-${DEVICE_MODEL}_25dB-${DB25}_${FIRMWARE_VERSION}${FILE_DATE}_${TYPE}.${EXT}"
               mv "$file" "$NEW_NAME"
             fi
           done
@@ -546,7 +546,7 @@ jobs:
           fi
 
           # 生成标签
-          TAG="ImmortalWrt-24.10-6.6-${{ matrix.device_model }}-${{ env.FIRMWARE_VERSION }}"
+          TAG="ImmortalWrt-25.12-${{ matrix.device_model }}-${{ env.FIRMWARE_VERSION }}"
           echo "RELEASE_TAG=$TAG-$(date +%Y%m%d%H%M%S)" | tee -a $GITHUB_OUTPUT >> $GITHUB_ENV
 
           # 生成发布说明
