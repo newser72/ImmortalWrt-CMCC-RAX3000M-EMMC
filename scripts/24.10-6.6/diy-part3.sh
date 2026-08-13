@@ -22,7 +22,7 @@ fi
 
 # 创建default目录，请替换nx30pro高功率固件
 mkdir package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom
-cp scripts/24.10-6.6/nx30pro_eeprom.bin package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
+cp ~/scripts/24.10-6.6/nx30pro_eeprom.bin package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
 
 # 删除 package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
 rm -f package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
