@@ -438,8 +438,10 @@ jobs:
           #else
           #  echo "EEPROM 文件无需修改: $EEPROM_FILE"
           #fi
-          cp /home/runner/work/rax3000m-emcc-immortalwrt24.10-new/rax3000m-emcc-immortalwrt24.10-new/scripts/24.10-6.6/nx30pro_eeprom.bin package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
-
+          ##cp /home/runner/work/rax3000m-emcc-immortalwrt24.10-new/rax3000m-emcc-immortalwrt24.10-new/scripts/24.10-6.6/nx30pro_eeprom.bin package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
+          cd openwrt
+          $GITHUB_WORKSPACE/$DIY_P2_SH
+          
       - name: 上传 .config
         uses: actions/upload-artifact@v6
         if: (github.event.inputs.ssh == 'true')
