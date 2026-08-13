@@ -354,6 +354,10 @@ jobs:
           ./scripts/feeds update -a || { echo "❌ 更新 Feeds 失败"; exit 1; }
           ./scripts/feeds install -a || { echo "❌ 安装 Feeds 失败"; exit 1; }
 
+      - name: SSH链接管理
+        uses: P3TERX/ssh2actions@v1.0.0
+        if: (github.event.inputs.ssh == 'true')
+
       #- name: 添加 luci-app-keepalived-ha 插件
       #  if: env.ENABLE_KEEPALIVED == 'true'
       #  run: |
@@ -434,10 +438,6 @@ jobs:
           else
             echo "EEPROM 文件无需修改: $EEPROM_FILE"
           fi
-
-      - name: SSH链接管理
-        uses: P3TERX/ssh2actions@v1.0.0
-        if: (github.event.inputs.ssh == 'true')
 
       - name: 上传 .config
         uses: actions/upload-artifact@v6
