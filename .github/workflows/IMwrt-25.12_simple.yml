@@ -475,6 +475,7 @@ jobs:
         run: |
           set -e
           cd openwrt
+          rm -rf build_dir/target-aarch64_cortex-a53_musl/root-mediatek/sbin/l1dat build_dir/target-aarch64_cortex-a53_musl/root-mediatek/sbin/l1util
           make -j$(nproc) || make -j4 || make -j1 V=s
           echo "status=success" >> $GITHUB_OUTPUT
           echo "DEVICE_NAME=_${{ matrix.device_model }}" >> $GITHUB_ENV
