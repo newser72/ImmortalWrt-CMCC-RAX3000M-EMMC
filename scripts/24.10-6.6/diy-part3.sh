@@ -22,9 +22,10 @@ fi
 
 # 创建default目录，请替换nx30pro高功率固件
 mkdir package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom
-rm -f package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
 #cp /home/runner/work/rax3000m-emcc-immortalwrt24.10-new/rax3000m-emcc-immortalwrt24.10-new/scripts/24.10-6.6/nx30pro_eeprom.bin package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
 cp $GITHUB_WORKSPACE/scripts/24.10-6.6/nx30pro_eeprom.bin package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin
+rm -f target/linux/mediatek/image/filogic.mk;cp $GITHUB_WORKSPACE/scripts/24.10-6.6/filogic.mk target/linux/mediatek/image/filogic.mk
+
 
 # 删除 package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
 rm -f package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
