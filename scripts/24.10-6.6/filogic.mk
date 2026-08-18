@@ -1017,7 +1017,8 @@ define Device/cmcc_rax3000m
   DEVICE_VENDOR := CMCC
   DEVICE_MODEL := RAX3000M
   DEVICE_DTS := mt7981b-cmcc-rax3000m
-  $(call Device/cmcc_rax3000m_common)
+  #$(call Device/cmcc_rax3000m_common)
+  $(call Device/cmcc_rax3000m-emmc)
   ARTIFACTS += emmc-preloader.bin emmc-bl31-uboot.fip \
 	nand-preloader.bin nand-bl31-uboot.fip
   ARTIFACT/emmc-preloader.bin := mt7981-bl2 emmc-ddr4
