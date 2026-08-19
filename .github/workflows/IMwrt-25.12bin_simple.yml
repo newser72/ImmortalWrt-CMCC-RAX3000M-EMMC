@@ -12,7 +12,7 @@ on:
         type: choice
         required: true
         options:
-          - cmcc_rax3000m-emmc
+          - cmcc_rax3000m-emmc-mtk
       enable_5g_25db:
         description: '启用 5G 25dB 修改'
         type: boolean
@@ -42,13 +42,13 @@ on:
           - '25.12'
       config_file:
         description: '配置文件'
-        default: '25.12_simple_seed.config'
+        default: '25.12bin_simple_seed.config'
         type: choice
         options:
           - '24.10-6.6.config'
           - '24.10-6.6_simple_seed.config'
           - '24.10-6.6_passwall_seed.config'
-          - '25.12_simple_seed.config'
+          - '25.12bin_simple_seed.config'
       #enable_keepalived:
       #  description: '集成keepalived'
       #  type: boolean
