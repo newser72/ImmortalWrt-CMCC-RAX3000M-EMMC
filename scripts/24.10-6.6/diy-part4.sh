@@ -31,6 +31,10 @@ cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-rax3000m-emmc-mtk.dts target
 cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-rax3000m-nand-mtk.dts target/linux/mediatek/dts/
 cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981.dtsi target/linux/mediatek/dts/
 cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981.dtsi target/linux/mediatek/files-6.12/arch/arm64/boot/dts/mediatek/
+cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-rax3000m-mtk-base.dtsi target/linux/mediatek/dts/
+cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-xr30-nand.dts target/linux/mediatek/dts/
+cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-xr30-stock.dts target/linux/mediatek/dts/
+cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-xr30.dtsi target/linux/mediatek/dts/
 
 # 删除 package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
 rm -f package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
