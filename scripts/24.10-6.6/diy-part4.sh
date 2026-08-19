@@ -29,6 +29,8 @@ rm -f target/linux/mediatek/image/filogic.mk;cp $GITHUB_WORKSPACE/scripts/24.10-
 #针对25.12版本，补上缺少的rax3000m的dts文件
 cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-rax3000m-emmc-mtk.dts target/linux/mediatek/dts/
 cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981b-cmcc-rax3000m-nand-mtk.dts target/linux/mediatek/dts/
+cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981.dtsi target/linux/mediatek/dts/
+cp $GITHUB_WORKSPACE/scripts/24.10-6.6/mt7981.dtsi target/linux/mediatek/files-6.12/arch/arm64/boot/dts/mediatek/
 
 # 删除 package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
 rm -f package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
