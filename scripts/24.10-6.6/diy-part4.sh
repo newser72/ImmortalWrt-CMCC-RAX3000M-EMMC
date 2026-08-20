@@ -48,7 +48,7 @@ fi
 EEPROM_FILE="package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin"
 if [ -f "$EEPROM_FILE" ]; then
   mkdir -p files/lib/firmware
-  cp $GITHUB_WORKSPACE/scripts/24.10-6.6/26dB-justfor25.12-MT7981_iPAiLNA_EEPROM.bin files/lib/firmware/MT7981_iPAiLNA_EEPROM.bin
+  cp $GITHUB_WORKSPACE/scripts/24.10-6.6/25dB-nx30pro_eeprom.bin files/lib/firmware/MT7981_iPAiLNA_EEPROM.bin
   ln -sf /lib/firmware/MT7981_iPAiLNA_EEPROM.bin files/lib/firmware/e2p
   echo "符号链接已创建"
   ls -l files/lib/firmware/e2p || { echo "错误：符号链接创建失败"; exit 1; }
